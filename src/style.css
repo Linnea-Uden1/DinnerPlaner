@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif; /* Använder Arial som huvudtypsnitt och faller tillbaka till sans-serif vid behov */
+    margin: 0; /* Tar bort standardmarginaler för hela dokumentet */
+    padding: 0; /* Tar bort standardutfyllnad */
+}
+
+.align-right {
+    text-align: right; /* Justerar texten till höger */
+}
+
+.search-results {
+    display: flex; /* Använder flexbox för att hantera layout */
+    flex-wrap: wrap; /* Tillåter att elementen bryts till nästa rad om det inte får plats */
+    gap: 16px; /* Lägger till mellanrum mellan elementen */
+}
+
+.dish-item {
+    text-align: center; /* Centrerar innehåll horisontellt */
+    width: 150px; /* Sätter en fast bredd för varje "dish-item" */
+    vertical-align: top; /* Justerar innehållet till toppen vertikalt */
+}
+
+.dish-name {
+    margin-top: 8px; /* Lägger till lite avstånd ovanför namnet */
+    font-size: 16px; /* Sätter textstorlek */
+    font-weight: bold; /* Gör texten fetstil */
+}
+
+.sidebar {
+    /* background-color: #C2FFC7; Sätter en ljusgrön bakgrundsfärg för sidomenyn */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Lägger till en subtil skugga för visuell separation */
+}
+
+.mainContent {
+    /* background-color: #9EDF9C; Sätter en grön bakgrundsfärg för huvudinnehållet */
+}
+
+/* Responsiv design: Anpassar layouten baserat på skärmens bredd */
+@media only screen and (max-width: 600px) {
+    .flexParent {
+        display: flex; /* Aktiverar flexbox */
+        flex-direction: column; /* Staplar sidomenyn ovanför huvudinnehållet */
+        height: 100%; /* Tar upp hela höjden */
+    }
+    .sidebar {
+        flex: none; /* Sidomenyn behåller sin egen storlek */
+        width: 100%; /* Full bredd på små skärmar */
+        height: auto; /* Höjden anpassas till innehållet */
+    }
+    .mainContent {
+        flex: 1; /* Huvudinnehållet tar upp resterande utrymme */
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .flexParent {
+        display: flex; /* Aktiverar flexbox */
+        flex-direction: row; /* Placera sidomenyn och huvudinnehållet bredvid varandra */
+        height: 150vh; /* Ger en längre höjd för hela sektionen */
+    }
+    .sidebar {
+        flex: 0.3; /* Sidomenyn tar upp 30% av bredden */
+        height: 100%; /* Full höjd */
+    }
+    .mainContent {
+        flex: 0.7; /* Huvudinnehållet tar upp 70% av bredden */
+        height: 100%; /* Full höjd */
+    }
+}
+
+button {
+    cursor: pointer; /* Ändrar muspekaren till en pekare vid hover */
+    border: none; /* Tar bort kantlinjen */
+    border-radius: 5px; /* Rundar hörnen */
+    padding: 5px 10px; /* Lägger till inre utfyllnad */
+    background-color: #62825D; /* Sätter en grön bakgrundsfärg */
+    color: white; /* Vit text */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Lägger till en animationseffekt vid hover */
+}
+
+button:hover {
+    background-color: #5b7956; /* Ändrar bakgrundsfärgen vid hover */
+    transform: scale(1.05); /* Förstorar knappen något vid hover */
+}
+
+input {
+    margin: 10px 10px; /* Lägger till yttre marginal */
+    padding: 5px 10px; /* Lägger till inre utfyllnad */
+    border: none; /* Tar bort kantlinjen */
+}
+
+select {
+    padding: 5px 10px; /* Lägger till inre utfyllnad */
+    margin: 10px 10px; /* Lägger till yttre marginal */
+}
+
+.guestButton {
+    padding: 10px 0px; /* Lägger till avstånd ovanför och under */
+}
+
+.guestButton button {
+    margin: 0 5px; /* Lägger till mellanrum mellan knappar */
+}
+
+.guestButton span {
+    margin: 0 10px; /* Lägger till mellanrum mellan text och andra element */
+}
+
+.detailViewButtons button {
+    margin: 5px 5px; /* Lägger till mellanrum mellan knappar */
+}
+
+.totalPrice {
+    font-weight: bold; /* Gör texten fetstil för att framhäva den */
+    text-align: left; /* Justerar texten till vänster */
+    padding: 10px 5px; /* Lägger till avstånd runt texten */
+}
+
+.totalPrice td {
+    padding: 8px 12px; /* Lägger till avstånd i tabellceller */
+}
+
+.price {
+    text-align: right; /* Justerar priset till höger */
+    color: #2a9d8f; /* Sätter en distinkt färg för priset */
+    font-size: 1.2em; /* Gör texten något större */
+}
